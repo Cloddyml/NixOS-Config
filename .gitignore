@@ -1,0 +1,12 @@
+# Hardware-specific
+hosts/*/hardware-configuration.nix
+
+# Build results
+result
+result-*
+
+# Secrets
+secrets/
+
+# Backup files
+*.backup
