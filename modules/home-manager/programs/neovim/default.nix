@@ -1,69 +1,15 @@
 { config, pkgs, ... }:
-
 {
+  imports = [
+    ./plugins.nix
+  ];
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    
-    # Плагины
-    plugins = with pkgs.vimPlugins; [
-      # UI и темы
-      catppuccin-nvim
-      nvim-web-devicons
-      lualine-nvim
-      bufferline-nvim
-      indent-blankline-nvim
-      
-      # Навигация и поиск
-      telescope-nvim
-      telescope-fzf-native-nvim
-      nvim-tree-lua
-      harpoon2
-      
-      # LSP и автодополнение
-      nvim-lspconfig
-      nvim-cmp
-      cmp-nvim-lsp
-      cmp-buffer
-      cmp-path
-      cmp-cmdline
-      luasnip
-      cmp_luasnip
-      friendly-snippets
-      
-      # Treesitter
-      (nvim-treesitter.withPlugins (p: [
-        p.nix
-        p.lua
-        p.python
-        p.rust
-        p.javascript
-        p.typescript
-        p.bash
-        p.json
-        p.yaml
-        p.markdown
-      ]))
-      
-      # Git интеграция
-      gitsigns-nvim
-      vim-fugitive
-      
-      # Полезные плагины
-      comment-nvim
-      nvim-autopairs
-      which-key-nvim
-      toggleterm-nvim
-      
-      # Форматирование
-      conform-nvim
-      
-      # Линтинг
-      nvim-lint
-    ];
     
     # Основная конфигурация
     extraLuaConfig = ''

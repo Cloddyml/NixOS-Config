@@ -4,6 +4,7 @@
   imports = [
     # Shell
     ../../modules/home-manager/shell/zsh.nix
+    ../../modules/home-manager/shell/starship.nix     # ← ДОБАВЛЕН
     ../../modules/home-manager/shell/cli-tools.nix
     
     # Programs

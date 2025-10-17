@@ -54,17 +54,4 @@
       bindkey '^e' edit-command-line
     '';
   };
-  
-  # Starship prompt (опционально - закомментируйте если не нужен)
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    settings = {
-      add_newline = true;
-      character = {
-        success_symbol = "[➜](bold green)";
-        error_symbol = "[➜](bold red)";
-      };
-    };
-  };
 }
