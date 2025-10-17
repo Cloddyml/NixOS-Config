@@ -23,10 +23,9 @@
     gamemode        # CLI для GameMode
   ];
   
-  # Оптимизация для игр
-  hardware.opengl = {
+  # Оптимизация для игр - ИСПРАВЛЕНО для NixOS 25.05
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 }
