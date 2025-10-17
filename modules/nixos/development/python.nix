@@ -5,7 +5,7 @@
     python3Full
     python312Packages.pip
     python312Packages.virtualenv
-    python312Packages.poetry
+    poetry
     
     # Полезные инструменты для Python разработки
     ruff         # Быстрый линтер и форматтер

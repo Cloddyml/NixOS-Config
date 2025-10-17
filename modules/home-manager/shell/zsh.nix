@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   programs.zsh = {
     enable = true;
@@ -40,7 +40,7 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
     
-    initExtra = ''
+    initContent = lib.mkBefore ''
       # Vi mode
       bindkey -v
       
