@@ -129,6 +129,7 @@
     # Основные утилиты
     wget curl git vim nano neovim
     htop btop tree unzip zip
+    nodejs_20
     
     # Поиск и навигация
     ripgrep fd eza bat fzf
@@ -179,6 +180,14 @@
     xdg-desktop-portal
     xdg-desktop-portal-gtk
   ];
+
+  environment.variables = {
+    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
+  };
+
+  environment.shellInit = ''
+    export PATH="$HOME/.npm-global/bin:$PATH
+  '';
   # =============== ШРИФТЫ ===============
   
   fonts = {
