@@ -29,4 +29,11 @@
   # ВАЖНО: Положите ваши обои в ~/Pictures/Wallpapers/
   # и переименуйте один в default.jpg
   # Или измените пути выше на свои
+
+  home.activation.createWallpaperFallback = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    if [ ! -f "$HOME/Pictures/Wallpapers/default.jpg" ]; then
+      $DRY_RUN_CMD mkdir -p "$HOME/Pictures/Wallpapers"
+      $DRY_RUN_CMD echo "ВНИМАНИЕ: Поместите изображение в ~/Pictures/Wallpapers/default.jpg"
+    fi
+  '';
 }
