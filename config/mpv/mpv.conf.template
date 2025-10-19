@@ -1,0 +1,22 @@
+# MPV Color Configuration - Matugen Template
+# ~/.config/mpv/mpv.conf.template
+
+# ========== ЦВЕТА OSD (Material Design 3) ==========
+
+# Primary color для элементов UI
+osd-color='#{{colors.primary.default.hex}}'
+osd-border-color='#{{colors.surface.default.hex}}'
+
+# Цвет прогресс-бара
+osd-bar-bg='#{{colors.surface_variant.default.hex}}'
+
+# ========== ЦВЕТА СУБТИТРОВ ==========
+
+sub-color='#{{colors.on_surface.default.hex}}'
+sub-border-color='#{{colors.surface.default.hex}}'
+sub-back-color='#{{colors.surface.default.hex}}80'
+
+# ========== ДОПОЛНИТЕЛЬНО ==========
+
+# Эти настройки будут перезаписывать основной mpv.conf
+# при генерации через matugen
