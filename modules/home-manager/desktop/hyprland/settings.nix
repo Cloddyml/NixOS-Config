@@ -5,7 +5,6 @@
     "$mod" = "SUPER";
     "$terminal" = "kitty";
     "$fileManager" = "thunar";
-    "$menu" = "wofi --show drun";
     
     # ========== МОНИТОРЫ ==========
     monitor = [

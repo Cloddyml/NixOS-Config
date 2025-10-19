@@ -21,12 +21,10 @@
     
     # AGS вместо Waybar
     ../../modules/home-manager/desktop/ags  # ← ДОБАВЛЕНО
-    # ../../modules/home-manager/desktop/waybar  # ← ЗАКОММЕНТИРОВАНО
     
     ../../modules/home-manager/desktop/theme.nix
     
     # Services
-    ../../modules/home-manager/services/dunst.nix
     ../../modules/home-manager/services/udiskie.nix
   ];
 
