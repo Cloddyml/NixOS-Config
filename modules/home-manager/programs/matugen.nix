@@ -9,13 +9,12 @@
   xdg.configFile."matugen/config.toml".text = ''
     [config]
     reload_apps = true
-    reload_apps_list = ["ags", "hyprpaper", "kitty", "mpv"]
+    reload_apps_list = ["ags", "hyprpaper", "kitty"]
     
     [config.reload]
     ags = "ags quit; ags"
     hyprpaper = "killall hyprpaper; hyprpaper"
     kitty = "killall -SIGUSR1 kitty"
-    mpv = "killall -SIGUSR1 mpv || true"
     
     # Шаблоны для генерации
     [[config.templates]]
@@ -29,10 +28,6 @@
     [[config.templates]]
     input_path = "~/.config/kitty/colors.conf.template"
     output_path = "~/.config/kitty/colors.conf"
-    
-    [[config.templates]]
-    input_path = "~/.config/mpv/mpv.conf.template"
-    output_path = "~/.config/mpv/colors.conf"
   '';
   
   # Скрипт для смены обоев и генерации цветов
