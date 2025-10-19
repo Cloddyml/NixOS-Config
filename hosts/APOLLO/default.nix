@@ -14,6 +14,7 @@
     ../../modules/nixos/fonts.nix
     ../../modules/nixos/desktop/hyprland.nix
     ../../modules/nixos/desktop/sddm.nix
+    ../../modules/nixos/desktop/ags.nix          # ← ДОБАВЛЕНО
     ../../modules/nixos/virtualisation/docker.nix
     
     # Опциональные модули (раскомментируйте если нужно)

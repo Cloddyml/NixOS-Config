@@ -4,7 +4,8 @@
     ./settings.nix
     ./keybinds.nix
     ./rules.nix
-    ./autostart.nix
+    ./ags-keybinds.nix     # ← ДОБАВЛЕНО для AGS
+    ./ags-autostart.nix    # ← ДОБАВЛЕНО для AGS
     ./hyprlock.nix
     ./hypridle.nix
     ./hyprpaper.nix
@@ -25,7 +26,7 @@
     hyprpicker     # Цветовой picker
     
     # Утилиты
-    wofi           # Application launcher
+    # wofi - больше не нужен, используем AGS
     grim           # Screenshots
     slurp          # Area selection для скриншотов
     swappy         # Screenshot editor
@@ -34,10 +35,11 @@
     playerctl      # Media player control
     pamixer        # Audio control
     
+    # Waypaper для выбора обоев
+    waypaper
+    
     # File manager
     xfce.thunar
     xfce.thunar-volman
-    
-    # Notification daemon настроен отдельно (dunst)
   ];
 }

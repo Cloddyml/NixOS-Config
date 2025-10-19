@@ -4,7 +4,7 @@
   imports = [
     # Shell
     ../../modules/home-manager/shell/zsh.nix
-    ../../modules/home-manager/shell/starship.nix     # ← ДОБАВЛЕН
+    ../../modules/home-manager/shell/starship.nix
     ../../modules/home-manager/shell/cli-tools.nix
     
     # Programs
@@ -14,10 +14,15 @@
     ../../modules/home-manager/programs/browsers.nix
     ../../modules/home-manager/programs/mpv.nix
     ../../modules/home-manager/programs/fastfetch.nix
+    ../../modules/home-manager/programs/matugen.nix  # ← ДОБАВЛЕНО
     
     # Desktop
     ../../modules/home-manager/desktop/hyprland
-    ../../modules/home-manager/desktop/waybar
+    
+    # AGS вместо Waybar
+    ../../modules/home-manager/desktop/ags  # ← ДОБАВЛЕНО
+    # ../../modules/home-manager/desktop/waybar  # ← ЗАКОММЕНТИРОВАНО
+    
     ../../modules/home-manager/desktop/theme.nix
     
     # Services
