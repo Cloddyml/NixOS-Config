@@ -6,13 +6,13 @@
     settings = {
       # Предзагрузка обоев
       preload = [
-        "~/Pictures/Wallpapers/default.jpg"
+        "~/Pictures/Wallpapers/current.jpg"
         # Добавьте больше путей если нужно несколько обоев
       ];
       
       # Установка обоев для мониторов
       wallpaper = [
-        ",~/Pictures/Wallpapers/default.jpg"
+        ",~/Pictures/Wallpapers/current.jpg"
         # Для дополнительного монитора:
         # "HDMI-A-1,~/Pictures/Wallpapers/monitor2.jpg"
       ];

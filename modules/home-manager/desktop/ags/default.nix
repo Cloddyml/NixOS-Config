@@ -5,7 +5,7 @@
     enable = true;
     
     # Используем AGS v2
-    # configDir = ./config;  # Раскомментируй после создания config/
+    configDir = ../../../config/ags;;  # Раскомментируй после создания config/
     
     # Дополнительные пакеты для AGS
     extraPackages = with pkgs; [

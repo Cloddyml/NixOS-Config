@@ -18,9 +18,21 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # AGS v2 + Astal
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.astal.follows = "astal";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, hyprland, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, disko, hyprland, astal, ags, ... } @ inputs:
     let
       system = "x86_64-linux";
       
@@ -50,9 +62,6 @@
       nixosConfigurations = {
         # Основной ноутбук
         APOLLO = mkHost "APOLLO" "couguar" [];
-        
-        # Пример второго хоста (раскомментируйте когда понадобится)
-        # DESKTOP = mkHost "DESKTOP" "couguar" [];
       };
       
       # Standalone Home Manager конфигурации (для не-NixOS систем)
