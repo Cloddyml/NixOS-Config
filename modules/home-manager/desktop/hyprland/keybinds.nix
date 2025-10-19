@@ -6,7 +6,6 @@
       # Запуск программ
       "$mod, Q, exec, $terminal"
       "$mod, E, exec, $fileManager"
-      "$mod, R, exec, $menu"
       "$mod, B, exec, firefox"
       
       # Управление окнами

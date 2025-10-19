@@ -5,11 +5,7 @@
       # AGS вместо Waybar
       "ags"
       
-      # НЕ запускаем Waybar
-      # "waybar"  # <-- закомментировано
-      
       # Остальные сервисы
-      "dunst"
       "nm-applet --indicator"
       "blueman-applet"
       "hyprpaper"

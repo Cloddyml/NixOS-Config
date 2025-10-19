@@ -26,7 +26,6 @@
     hyprpicker     # Цветовой picker
     
     # Утилиты
-    # wofi - больше не нужен, используем AGS
     grim           # Screenshots
     slurp          # Area selection для скриншотов
     swappy         # Screenshot editor
