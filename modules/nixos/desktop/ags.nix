@@ -1,13 +1,11 @@
 { config, lib, pkgs, ... }:
 {
   # AGS system-level dependencies
-  # AGS itself is configured via home-manager
+  # AGS v1 is configured via home-manager
 
   environment.systemPackages = with pkgs; [
-    # AGS runtime
-    bun        # JavaScript runtime for AGS v2
-    dart-sass  # SCSS compilation
-    fd         # File search
+    # SCSS compilation for AGS styling
+    dart-sass
 
     # Material Design theming
     matugen
