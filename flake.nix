@@ -1,5 +1,5 @@
 {
-  description = "APOLLO - NixOS Configuration with Hyprland & AGS";
+  description = "APOLLO - NixOS Configuration with Hyprland & AGS v1";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -19,20 +19,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # AGS v2 + Astal
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # AGS v1 (stable)
     ags = {
-      url = "github:aylur/ags";
+      url = "github:aylur/ags/v1";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.astal.follows = "astal";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, hyprland, astal, ags, ... } @ inputs:
+  outputs = { self, nixpkgs, home-manager, disko, hyprland, ags, ... } @ inputs:
     let
       system = "x86_64-linux";
 

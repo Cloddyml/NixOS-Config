@@ -1,13 +1,16 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
-  # AGS - Aylur's GTK Shell v2
+  # Import AGS v1 home-manager module
+  imports = [ inputs.ags.homeManagerModules.default ];
+
+  # AGS - Aylur's GTK Shell v1 (stable)
   programs.ags = {
     enable = true;
 
-    # Path to AGS config
+    # Symlink to ~/.config/ags
     configDir = ../../../config/ags;
 
-    # AGS dependencies
+    # Additional packages for AGS widgets
     extraPackages = with pkgs; [
       gtksourceview
       webkitgtk
@@ -18,40 +21,34 @@
   # Widget dependencies
   home.packages = with pkgs; [
     # System utilities
-    libnotify
     playerctl
     pamixer
     jq
     curl
+    libnotify
 
     # Icons
     papirus-icon-theme
   ];
-  
-  # Создаём директории
-  home.file = {
-    ".config/ags/.keep".text = "";
-    ".cache/ags/.keep".text = "";
-  };
-  
-  # GTK настройки для Material Design
+
+  # GTK theme for Material Design
   gtk = {
     enable = true;
-    
+
     theme = {
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
     };
-    
+
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-    
+
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
-    
+
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
