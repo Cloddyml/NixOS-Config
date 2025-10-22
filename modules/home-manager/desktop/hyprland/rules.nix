@@ -33,12 +33,6 @@
       "workspace 4, class:^(steam)$"
     ];
     
-    # Layer rules для оверлеев
-    layerrule = [
-      "blur, waybar"
-      "blur, wofi"
-      "ignorezero, waybar"
-      "ignorezero, wofi"
-    ];
+    # Layer rules for overlays - managed by ags-keybinds.nix
   };
 }

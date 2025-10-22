@@ -1,38 +1,31 @@
 { config, pkgs, lib, ... }:
 {
-  # AGS конфигурация
+  # AGS - Aylur's GTK Shell v2
   programs.ags = {
     enable = true;
-    
-    # Используем AGS v2
-    configDir = ../../../config/ags;;  # Раскомментируй после создания config/
-    
-    # Дополнительные пакеты для AGS
+
+    # Path to AGS config
+    configDir = ../../../config/ags;
+
+    # AGS dependencies
     extraPackages = with pkgs; [
       gtksourceview
       webkitgtk
       accountsservice
     ];
   };
-  
-  # Необходимые пакеты для виджетов
+
+  # Widget dependencies
   home.packages = with pkgs; [
-    # Для Overview и скриншотов
-    grim
-    slurp
-    swappy
-    
-    # Для уведомлений и медиа
+    # System utilities
     libnotify
     playerctl
     pamixer
-    
-    # Иконки
-    papirus-icon-theme
-    
-    # Для погоды и других виджетов
     jq
     curl
+
+    # Icons
+    papirus-icon-theme
   ];
   
   # Создаём директории

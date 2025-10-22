@@ -3,36 +3,41 @@
 {
   imports = [
     ./hardware-configuration.nix
-    # ./disko-config.nix  # Раскомментировать для новой установки
+    # ./disko-config.nix  # Uncomment for fresh install
 
-    # Системные модули
+    # Core system
     ../../modules/nixos/boot.nix
     ../../modules/nixos/users.nix
     ../../modules/nixos/audio.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/networking.nix
     ../../modules/nixos/fonts.nix
+
+    # Desktop environment
     ../../modules/nixos/desktop/hyprland.nix
     ../../modules/nixos/desktop/sddm.nix
-    ../../modules/nixos/desktop/ags.nix          # ← ДОБАВЛЕНО
+    ../../modules/nixos/desktop/ags.nix
+
+    # Virtualization
     ../../modules/nixos/virtualisation/docker.nix
-    
-    # Опциональные модули (раскомментируйте если нужно)
+
+    # Development
     ../../modules/nixos/gaming.nix
     ../../modules/nixos/development/python.nix
     ../../modules/nixos/development/rust.nix
     ../../modules/nixos/development/nodejs.nix
   ];
 
-  # =============== ОСНОВНЫЕ НАСТРОЙКИ ===============
-  
+  # ═══════════════════════════════════════════════════
+  # Locale & Time
+  # ═══════════════════════════════════════════════════
+
   networking.hostName = hostname;
-  
   time.timeZone = "Europe/Moscow";
-  
+
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    supportedLocales = [ 
+    supportedLocales = [
       "en_US.UTF-8/UTF-8"
       "ru_RU.UTF-8/UTF-8"
     ];
@@ -43,37 +48,46 @@
     useXkbConfig = true;
   };
 
-  # =============== СИСТЕМНЫЕ ПАКЕТЫ ===============
-  
+  # ═══════════════════════════════════════════════════
+  # System Packages
+  # ═══════════════════════════════════════════════════
+
   environment.systemPackages = with pkgs; [
-    # Основные утилиты
+    # Core utilities
     wget curl git vim
     htop tree unzip zip
-    
-    # Network tools
+
+    # Network
     networkmanagerapplet
-    
-    # Essential для Wayland
+
+    # Wayland essentials
     wayland
     wayland-protocols
     wl-clipboard
-    
-    # Hyprland ecosystem
-    grim slurp
-    
+
+    # Screenshots & media control
+    grim
+    slurp
+    brightnessctl
+    playerctl
+    pamixer
+
     # System info
     fastfetch
   ];
 
-  # =============== НАСТРОЙКИ NIX ===============
-  
+  # ═══════════════════════════════════════════════════
+  # Nix Configuration
+  # ═══════════════════════════════════════════════════
+
   nix = {
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       trusted-users = [ "root" username ];
     };
-    
+
+    # Automatic garbage collection
     gc = {
       automatic = true;
       dates = "weekly";
@@ -82,6 +96,5 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  
   system.stateVersion = "25.05";
 }

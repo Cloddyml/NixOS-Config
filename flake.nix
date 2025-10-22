@@ -1,9 +1,9 @@
 {
-  description = "APOLLO - NixOS Configuration with Hyprland";
+  description = "APOLLO - NixOS Configuration with Hyprland & AGS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,18 +13,18 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     # AGS v2 + Astal
     astal = {
       url = "github:aylur/astal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
     ags = {
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,15 +35,15 @@
   outputs = { self, nixpkgs, home-manager, disko, hyprland, astal, ags, ... } @ inputs:
     let
       system = "x86_64-linux";
-      
-      # Функция для создания хост-конфигурации
+
+      # Helper function to create NixOS configurations
       mkHost = hostname: username: modules: nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = { inherit inputs hostname username; };
         modules = [
           disko.nixosModules.disko
           ./hosts/${hostname}
-          
+
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -58,17 +58,16 @@
       };
     in
     {
-      # NixOS конфигурации
+      # NixOS configurations
       nixosConfigurations = {
-        # Основной ноутбук
         APOLLO = mkHost "APOLLO" "couguar" [];
       };
-      
-      # Standalone Home Manager конфигурации (для не-NixOS систем)
+
+      # Standalone home-manager configurations
       homeConfigurations = {
         "couguar@APOLLO" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${system};
-          extraSpecialArgs = { 
+          extraSpecialArgs = {
             inherit inputs;
             hostname = "APOLLO";
             username = "couguar";

@@ -17,26 +17,18 @@
     systemd.enable = true;
   };
   
-  # Необходимые пакеты для Hyprland
+  # Hyprland ecosystem packages
   home.packages = with pkgs; [
-    # Hyprland ecosystem
-    hyprpaper      # Обои
-    hyprlock       # Блокировка экрана
-    hypridle       # Idle daemon
-    hyprpicker     # Цветовой picker
-    
-    # Утилиты
-    grim           # Screenshots
-    slurp          # Area selection для скриншотов
-    swappy         # Screenshot editor
-    wl-clipboard   # Буфер обмена
-    brightnessctl  # Контроль яркости
-    playerctl      # Media player control
-    pamixer        # Audio control
-    
-    # Waypaper для выбора обоев
+    # Core utilities
+    hyprpaper
+    hyprlock
+    hypridle
+    hyprpicker
+    swappy
+
+    # Wallpaper picker
     waypaper
-    
+
     # File manager
     xfce.thunar
     xfce.thunar-volman

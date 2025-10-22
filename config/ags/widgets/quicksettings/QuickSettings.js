@@ -1,11 +1,13 @@
-// Quick Settings Widget - Sidebar
-// ~/.config/ags/widgets/quicksettings/QuickSettings.js
+// Quick Settings Widget - Sidebar with system stats
+// Inspired by end-4/dots-hyprland
 
 const audio = await Service.import("audio");
 const network = await Service.import("network");
 const bluetooth = await Service.import("bluetooth");
 
 const { execAsync } = Utils;
+
+import { SystemStats } from "./SystemStats.js";
 
 // Header
 const Header = () => Widget.Box({
@@ -138,16 +140,21 @@ const QuickToggles = () => Widget.Box({
 });
 
 // Main content
-const Content = () => Widget.Box({
-  class_name: "qs-content",
-  vertical: true,
-  spacing: 16,
-  children: [
-    Header(),
-    QuickToggles(),
-    VolumeSlider(),
-    BrightnessSlider(),
-  ],
+const Content = () => Widget.Scrollable({
+  hscroll: "never",
+  vscroll: "automatic",
+  child: Widget.Box({
+    class_name: "qs-content",
+    vertical: true,
+    spacing: 16,
+    children: [
+      Header(),
+      QuickToggles(),
+      VolumeSlider(),
+      BrightnessSlider(),
+      SystemStats(),
+    ],
+  }),
 });
 
 // Main Quick Settings window

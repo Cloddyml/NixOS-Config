@@ -87,6 +87,44 @@ $font-size: 13px;
   font-weight: 500;
 }
 
+// Media player widget
+.media {
+  background-color: $md3-surface-variant;
+  border-radius: $radius;
+  padding: $spacing;
+  margin-right: $spacing * 2;
+
+  .media-cover-art {
+    background-color: $md3-surface;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .media-title {
+    color: $md3-on-surface;
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  .media-artist {
+    color: $md3-on-surface-variant;
+    font-size: 11px;
+  }
+
+  .media-playpause,
+  .media-next {
+    background-color: transparent;
+    color: $md3-primary;
+    border-radius: $radius - 4px;
+    padding: $spacing / 2;
+    min-width: 32px;
+    min-height: 32px;
+
+    &:hover {
+      background-color: $md3-primary-container;
+    }
+  }
+}
+
 // Clock
 .clock {
   color: $md3-on-surface;
@@ -250,24 +288,66 @@ $font-size: 13px;
     background-color: $md3-surface-variant;
     border-radius: $radius;
     padding: $spacing * 2;
-    
+
     slider {
       trough {
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: $radius;
         min-height: 8px;
       }
-      
+
       highlight {
         background-color: $md3-primary;
         border-radius: $radius;
       }
-      
+
       slider {
         background-color: $md3-primary;
         border-radius: 50%;
         min-width: 20px;
         min-height: 20px;
+      }
+    }
+  }
+
+  // System stats
+  .system-stats {
+    background-color: $md3-surface-variant;
+    border-radius: $radius;
+    padding: $spacing * 2;
+
+    .section-title {
+      color: $md3-primary;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: $spacing;
+    }
+
+    .stat-item {
+      padding: $spacing;
+
+      .stat-label {
+        color: $md3-on-surface;
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .stat-value {
+        color: $md3-on-surface-variant;
+        font-size: 12px;
+        min-width: 40px;
+      }
+
+      .stat-bar {
+        trough {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 4px;
+        }
+
+        bar {
+          background-color: $md3-primary;
+          border-radius: 4px;
+        }
       }
     }
   }
