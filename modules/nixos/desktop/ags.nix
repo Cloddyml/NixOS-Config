@@ -1,27 +1,23 @@
 { config, lib, pkgs, ... }:
 {
-  # AGS - Aylur's GTK Shell
-  programs.ags = {
-    enable = true;
-  };
-  
-  # Необходимые пакеты для AGS и Material Design
+  # AGS system-level dependencies
+  # AGS itself is configured via home-manager
+
   environment.systemPackages = with pkgs; [
-    # AGS зависимости
-    bun  # JavaScript runtime для AGS v2
-    dart-sass  # Для компиляции SCSS
-    fd  # Для поиска файлов
-    brightnessctl  # Контроль яркости
-    
-    # Material Design цвета
-    matugen  # Material Design 3 color generation
-    
-    # Иконки и шрифты для красивого UI
+    # AGS runtime
+    bun        # JavaScript runtime for AGS v2
+    dart-sass  # SCSS compilation
+    fd         # File search
+
+    # Material Design theming
+    matugen
+
+    # Icons
     material-design-icons
     material-symbols
   ];
-  
-  # Fonts для Material Design
+
+  # Material Design fonts
   fonts.packages = with pkgs; [
     material-design-icons
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })

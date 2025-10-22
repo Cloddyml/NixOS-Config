@@ -1,5 +1,4 @@
-// Bar Widget - Material Design Style
-// ~/.config/ags/widgets/bar/Bar.js
+// Bar Widget - Material Design inspired by end-4
 
 const hyprland = await Service.import("hyprland");
 const audio = await Service.import("audio");
@@ -8,6 +7,8 @@ const systemtray = await Service.import("systemtray");
 const date = Variable("", {
   poll: [1000, 'date "+%H:%M  %b %e"'],
 });
+
+import { MediaWidget } from "./MediaWidget.js";
 
 // Workspaces widget
 const Workspaces = () => Widget.Box({
@@ -90,6 +91,7 @@ const Left = () => Widget.Box({
 const Center = () => Widget.Box({
   spacing: 8,
   children: [
+    MediaWidget(),
     Clock(),
   ],
 });
