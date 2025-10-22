@@ -65,12 +65,9 @@
     wayland-protocols
     wl-clipboard
 
-    # Screenshots & media control
+    # Screenshots (used by Hyprland keybinds)
     grim
     slurp
-    brightnessctl
-    playerctl
-    pamixer
 
     # System info
     fastfetch

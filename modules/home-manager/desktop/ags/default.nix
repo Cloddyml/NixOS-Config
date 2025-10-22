@@ -18,17 +18,16 @@
     ];
   };
 
-  # Widget dependencies
+  # Widget dependencies for AGS
   home.packages = with pkgs; [
-    # System utilities
+    # Media & audio control (for AGS widgets)
     playerctl
     pamixer
+    brightnessctl
+
+    # Utilities
     jq
     curl
     libnotify
-
-    # Icons & themes
-    papirus-icon-theme
-    adw-gtk3  # Material Design GTK theme (configured in theme.nix)
   ];
 }
