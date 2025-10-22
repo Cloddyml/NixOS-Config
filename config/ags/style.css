@@ -1,0 +1,336 @@
+/* AGS Material Design Styles - Minimal working version */
+
+/* Global reset */
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+}
+
+/* Bar */
+.bar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.bar-container {
+  padding: 0 16px;
+  min-height: 42px;
+}
+
+/* Workspaces */
+.workspaces {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+.workspaces button {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 0 12px;
+  margin: 0 2px;
+  min-width: 30px;
+  transition: all 200ms ease;
+}
+
+.workspaces button.active {
+  background-color: rgba(66, 133, 244, 1);
+  color: white;
+}
+
+.workspaces button.occupied:not(.active) {
+  background-color: rgba(66, 133, 244, 0.3);
+  color: white;
+}
+
+.workspaces button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Client title */
+.client-title {
+  color: white;
+  margin-left: 16px;
+  font-weight: 500;
+}
+
+/* Clock */
+.clock {
+  color: white;
+  font-weight: 600;
+  padding: 0 16px;
+}
+
+/* Media player */
+.media {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  margin-right: 16px;
+}
+
+.media-cover-art {
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.media-title {
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.media-artist {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+}
+
+.media-playpause,
+.media-next {
+  background-color: transparent;
+  color: rgb(66, 133, 244);
+  border-radius: 8px;
+  padding: 4px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.media-playpause:hover,
+.media-next:hover {
+  background-color: rgba(66, 133, 244, 0.2);
+}
+
+/* Volume & Battery */
+.volume,
+.battery {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px 12px;
+  color: white;
+}
+
+.volume:hover,
+.battery:hover {
+  background-color: rgba(66, 133, 244, 0.3);
+}
+
+.battery {
+  min-width: 70px;
+}
+
+/* System tray */
+.systray button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 8px;
+  margin: 0 2px;
+  color: white;
+}
+
+.systray button:hover {
+  background-color: rgba(66, 133, 244, 0.3);
+}
+
+/* Overview */
+.overview {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.search-bar {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.search-bar entry {
+  background-color: transparent;
+  color: white;
+  caret-color: rgb(66, 133, 244);
+}
+
+.workspace-label {
+  color: rgb(66, 133, 244);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.window-preview {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 200ms ease;
+}
+
+.window-preview:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.window-title {
+  margin-left: 8px;
+  font-weight: 500;
+  color: white;
+}
+
+/* Quick Settings */
+.quicksettings-container {
+  background-color: rgba(20, 20, 20, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.qs-header {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.qs-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.qs-close {
+  background-color: rgb(244, 67, 54);
+  color: white;
+  border-radius: 50%;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.qs-close:hover {
+  opacity: 0.8;
+}
+
+.quick-toggles button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  min-width: 100px;
+}
+
+.quick-toggles button.active {
+  background-color: rgb(66, 133, 244);
+  color: white;
+}
+
+.slider-box {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.slider-box slider trough {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  min-height: 8px;
+}
+
+.slider-box slider highlight {
+  background-color: rgb(66, 133, 244);
+  border-radius: 12px;
+}
+
+.slider-box slider slider {
+  background-color: rgb(66, 133, 244);
+  border-radius: 50%;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* System stats */
+.system-stats {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.section-title {
+  color: rgb(66, 133, 244);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.stat-item {
+  padding: 8px;
+}
+
+.stat-label {
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.stat-value {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  min-width: 40px;
+}
+
+.stat-bar trough {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.stat-bar bar {
+  background-color: rgb(66, 133, 244);
+  border-radius: 4px;
+}
+
+/* Notifications */
+.notifications-container {
+  margin: 60px 16px 0 0;
+}
+
+.notification {
+  background-color: rgba(20, 20, 20, 0.95);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
+}
+
+.notification.critical {
+  background-color: rgba(244, 67, 54, 0.9);
+  color: white;
+}
+
+.notification-icon {
+  margin-right: 16px;
+}
+
+.notification-app {
+  color: rgb(66, 133, 244);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.notification-summary {
+  color: white;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.notification-body {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 4px;
+}
+
+.notification-close {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.notification-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
