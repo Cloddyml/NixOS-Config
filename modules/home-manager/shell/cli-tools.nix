@@ -16,11 +16,10 @@
     unzip
     zip
     p7zip
-    
+
     # Wayland инструменты
     wl-clipboard
-    swappy
-    
+
     # Мультимедиа
     cava
     imv

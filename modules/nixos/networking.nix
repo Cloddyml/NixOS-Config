@@ -10,7 +10,8 @@
   };
   
   environment.systemPackages = with pkgs; [
-    networkmanagerapplet wget curl speedtest-cli
+    networkmanagerapplet
+    speedtest-cli
   ];
   
   services.avahi = {

@@ -26,8 +26,6 @@
     brightnessctl
 
     # Utilities
-    jq
-    curl
     libnotify
   ];
 }
