@@ -55,7 +55,7 @@
   environment.systemPackages = with pkgs; [
     # Core utilities
     wget curl git vim
-    htop tree unzip zip
+    htop
 
     # Network
     networkmanagerapplet
@@ -63,14 +63,10 @@
     # Wayland essentials
     wayland
     wayland-protocols
-    wl-clipboard
 
     # Screenshots (used by Hyprland keybinds)
     grim
     slurp
-
-    # System info
-    fastfetch
   ];
 
   # ═══════════════════════════════════════════════════

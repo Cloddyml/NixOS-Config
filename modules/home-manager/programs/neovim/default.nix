@@ -154,20 +154,16 @@
     # Nix
     nil
     nixfmt-rfc-style
-    
+
     # Python
     pyright
     black
-    
+
     # Rust
     rust-analyzer
-    
+
     # JavaScript/TypeScript
     nodePackages.typescript-language-server
     nodePackages.prettier
-    
-    # Другие полезные инструменты
-    ripgrep
-    fd
   ];
 }
