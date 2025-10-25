@@ -8,7 +8,7 @@
     enable = true;
 
     # Symlink to ~/.config/ags
-    configDir = ../../../config/ags;
+    configDir = ../../../../config/ags;
 
     # Additional packages for AGS widgets
     extraPackages = with pkgs; [

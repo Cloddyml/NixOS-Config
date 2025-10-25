@@ -13,6 +13,7 @@
   };
   
   environment.systemPackages = with pkgs; [
-    pavucontrol playerctl pamixer alsa-utils
+    pavucontrol
+    alsa-utils
   ];
 }
